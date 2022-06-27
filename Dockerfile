@@ -24,7 +24,7 @@ COPY . $APP_DIR
 
 WORKDIR $APP_DIR
 
-RUN cat /bash.txt
+RUN cat bash.txt
 
 RUN npm prune --production && chown -R owauser:owauser $APP_DIR
 EXPOSE $PORT
