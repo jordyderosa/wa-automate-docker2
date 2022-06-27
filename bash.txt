@@ -43,6 +43,7 @@ bash
   chown -R owauser:owauser /usr/bin/google-chrome
   cd /usr/src/app
   chown -R owauser:owauser /usr/src/app
+  npm install -g npm@8.13.1
   npm i @open-wa/wa-automate@latest --ignore-scripts
   npm cache clean --force
   docker run -p 8080:8080 --init openwa/wa-automate --multi-device
