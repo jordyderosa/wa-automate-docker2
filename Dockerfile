@@ -24,7 +24,7 @@ COPY . $APP_DIR
 
 WORKDIR $APP_DIR
 
-RUN bash
+RUN <<EOF bash
   mkdir -p /usr/src/app
   mkdir -p /usr/src/app/node_modules
   mkdir -p /sessions
@@ -71,6 +71,7 @@ RUN bash
   chown -R owauser:owauser /usr/src/app
   npm i @open-wa/wa-automate@latest --ignore-scripts
   npm cache clean --force
+EOF
 
 RUN npm prune --production && chown -R owauser:owauser $APP_DIR
 EXPOSE $PORT
